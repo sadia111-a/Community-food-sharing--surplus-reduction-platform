@@ -1,0 +1,122 @@
+[
+  {
+    "food_img": "https://i.ibb.co/tMHgWhQ/pexels-photo-6210747.webp",
+    "food_name": "Chicken Alfredo",
+    "donator_img": "https://i.ibb.co/4R06Jzy/member1.png",
+    "donator_name": "Alice Johnson",
+    "food_quantity": "3 servings",
+    "location": "123 Elm Street, Anytown",
+    "expired_date": "2023-12-15",
+    "quality": "Excellent"
+  },
+  {
+    "food_img": "https://i.ibb.co/CWSvfDT/Vegetable-Lasagna-Recipe-Card.jpg",
+    "food_name": "Vegetable Lasagna",
+    "donator_img": "https://i.ibb.co/WGWPRWw/member2.png",
+    "donator_name": "Emily Davis",
+    "food_quantity": "4 portions",
+    "location": "456 Oak Avenue, Another City",
+    "expired_date": "2023-11-30",
+    "quality": "Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/Gx3pWr1/minestrone-soup-recipe-A-09-2-1.jpg",
+    "food_name": "Minestrone Soup",
+    "donator_img": "https://i.ibb.co/bmq3YNy/member3.png",
+    "donator_name": "John Smith",
+    "food_quantity": "2 quarts",
+    "location": "789 Maple Road, Townsville",
+    "expired_date": "2023-12-05",
+    "quality": "Excellent"
+  },
+  {
+    "food_img": "https://i.ibb.co/wKmwZt6/20220211142754-margherita-9920.webp",
+    "food_name": "Margherita Pizza",
+    "donator_img": "https://i.ibb.co/MZdf7Rx/member4.png",
+    "donator_name": "Maria Brown",
+    "food_quantity": "1 large pizza",
+    "location": "101 Pine Lane, Smallville",
+    "expired_date": "2023-11-25",
+    "quality": "Very Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/wJCfsfC/How-to-Make-a-Simple-Fruit-Platter-5-500x500.jpg",
+    "food_name": "Fruit Platter",
+    "donator_img": "https://i.ibb.co/mczTjYq/user-2.png",
+    "donator_name": "Sarah Wilson",
+    "food_quantity": "5 servings",
+    "location": "234 Cedar Street, Another Town",
+    "expired_date": "2023-12-10",
+    "quality": "Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/hfRmVX4/maxresdefault.jpg",
+    "food_name": "Beef Burritos",
+    "donator_img": "https://i.ibb.co/FYmPG6T/giphy.gif",
+    "donator_name": "David Lee",
+    "food_quantity": "6 burritos",
+    "location": "567 Birch Drive, Hometown",
+    "expired_date": "2023-11-28",
+    "quality": "Excellent"
+  },
+  {
+    "food_img": "https://i.ibb.co/CKFBHf6/download-4.jpg",
+    "food_name": "Chocolate Mousse Cake",
+    "donator_img": "https://i.ibb.co/nMdvHJq/user-3.png",
+    "donator_name": "Olivia White",
+    "food_quantity": "1 whole cake",
+    "location": "321 Redwood Lane, Villageville",
+    "expired_date": "2023-12-20",
+    "quality": "Very Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/LhYsrQW/ultimate-sushi-recipe-scaled.jpg",
+    "food_name": "Sushi Rolls",
+    "donator_img": "https://i.ibb.co/3BZH7PN/user-1.png",
+    "donator_name": "Ethan Clark",
+    "food_quantity": "20 pieces",
+    "location": "432 Oak Road, Riverside",
+    "expired_date": "2023-11-29",
+    "quality": "Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/fqFqd7n/Greek-Salad-Recipe-Easy.jpg",
+    "food_name": "Greek Salad",
+    "donator_img": "https://i.ibb.co/3F92r24/girl1.jpg",
+    "donator_name": "Sophia Anderson",
+    "food_quantity": "4 servings",
+    "location": "654 Elm Lane, Lakeview",
+    "expired_date": "2023-12-12",
+    "quality": "Excellent"
+  },
+  {
+    "food_img": "https://i.ibb.co/zNJScQc/pulled-pork-sandwich-scaled.jpg",
+    "food_name": "Pulled Pork Sandwich",
+    "donator_img": "https://i.ibb.co/w0rVrBm/boy1.png",
+    "donator_name": "Daniel Garcia",
+    "food_quantity": "2 sandwiches",
+    "location": "789 Cedar Street, Riverside",
+    "expired_date": "2023-11-29",
+    "quality": "Very Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/wLv454b/mushroom-risotto.jpg",
+    "food_name": "Mushroom Risotto",
+    "donator_img": "https://i.ibb.co/80Yb6px/girl2.jpg",
+    "donator_name": "Isabella Martinez",
+    "food_quantity": "4 servings",
+    "location": "123 Pine Road, Smalltown",
+    "expired_date": "2023-12-10",
+    "quality": "Good"
+  },
+  {
+    "food_img": "https://i.ibb.co/RB9t6Ss/10294-the-best-lemon-bars-medha-3x2jpg-fbc510e2c584465e8e5c767f12da2408.jpg",
+    "food_name": "Lemon Bars",
+    "donator_img": "https://i.ibb.co/5MCcQV2/boy2.jpg",
+    "donator_name": "William Turner",
+    "food_quantity": "12 bars",
+    "location": "567 Elm Drive, Countryside",
+    "expired_date": "2023-11-30",
+    "quality": "Excellent"
+  }
+]

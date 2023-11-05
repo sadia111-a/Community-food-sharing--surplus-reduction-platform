@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="carousel w-full h-[650px]">
+    <div className="carousel  lg:w-full lg:h-[650px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img
           src="https://i.ibb.co/2h1QQKy/pexels-photo-3184195.jpg"
@@ -10,8 +10,8 @@ const Header = () => {
           className="absolute  rounded-xl flex  h-full  left-0 pl-4 items-center bottom-0 bg-gradient-to-r from-[#151515] to-[
   rgba(21, 21, 21, 0.00)]"
         >
-          <div className="text-amber-50 space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl  font-bold">
+          <div className="text-amber-50 space-y-7 lg:pl-12 lg:w-1/2">
+            <h2 className="text-xl lg:text-6xl  font-bold">
               Community Food Sharing and Surplus Reduction Platform
             </h2>
             <p>
@@ -46,8 +46,8 @@ const Header = () => {
           className="absolute  rounded-xl flex  h-full  left-0 pl-4 items-center bottom-0 bg-gradient-to-r from-[#151515] to-[
   rgba(21, 21, 21, 0.00)]"
         >
-          <div className="text-amber-50 space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl  font-bold">
+          <div className="text-amber-50 space-y-7 lg:pl-12 lg:w-1/2">
+            <h2 className="text-xl lg:text-6xl  font-bold">
               Affordable Price For Food Serving
             </h2>
             <p>
@@ -82,8 +82,8 @@ const Header = () => {
           className="absolute  rounded-xl flex  h-full  left-0 pl-4 items-center bottom-0 bg-gradient-to-r from-[#151515] to-[
   rgba(21, 21, 21, 0.00)]"
         >
-          <div className="text-amber-50 space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl  font-bold">
+          <div className="text-amber-50 space-y-7 lg:pl-12 lg:w-1/2">
+            <h2 className="text-xl lg:text-6xl  font-bold">
               Affordable Price For Food Serving
             </h2>
             <p>
