@@ -12,7 +12,7 @@ const Header = () => {
         >
           <div className="text-amber-50 space-y-7 pl-12 w-1/2">
             <h2 className="text-6xl  font-bold">
-              Affordable Price For Food Serving
+              Community Food Sharing and Surplus Reduction Platform
             </h2>
             <p>
               There are many variations of passages of available, but the

@@ -1,15 +1,65 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import { AuthContext } from "../provider/AuthProvider";
+import SocialLogin from "../components/SocialLogin";
 
 const Register = () => {
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const photo = e.target.photo.value;
+    const password = e.target.password.value;
+    console.log(name, email, photo, password);
+    // validation
+    if (password.length < 6) {
+      swal("Error!", " please give 6 characters password!", "error");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      swal(
+        "Error!",
+        " Password must contain at least one capital letter!",
+        "error"
+      );
+      return;
+    } else if (!/[^A-Za-z0-9]/.test(password)) {
+      swal(
+        "Error!",
+        "Password must contain at least one special character!",
+        "error"
+      );
+      return;
+    }
+    // create a new user
+    createUser(email, password)
+      .then((res) => {
+        handleUpdateProfile(name, photo).then(() => {
+          swal("Good job!", "user created successfully", "success");
+          navigate("/");
+        });
+      })
+      .catch((error) => {
+        swal("Error!", " please register again!", error);
+      });
+  };
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div
+      className="hero min-h-screen bg-base-200 bg-opacity-60 bg-gradient-to-r from-[#151515] to-[
+        rgba(21, 21, 21, 0.00)]"
+      style={{
+        backgroundImage:
+          "url(https://i.ibb.co/NVR9SzD/pexels-photo-5638732.jpg)",
+      }}
+    >
       <div className="hero-content flex-col ">
-        <div className="text-center ">
-          <h1 className="text-5xl font-bold">Register now!</h1>
-        </div>
+        <div className="text-center "></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div className="card-body">
-            <form>
+          <div className="card-body bg-amber-100">
+            <h1 className="text-4xl text-center font-bold">Register now!</h1>
+            <form onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -64,7 +114,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary bg-green-400 border-0 text-white font-semibold">
+                <button className="btn btn-primary bg-green-500 border-0 text-orange-950 font-semibold">
                   Register
                 </button>
               </div>
@@ -77,7 +127,7 @@ const Register = () => {
                 </button>
               </Link>
             </p>
-            {/* <SocialLogin></SocialLogin> */}
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
