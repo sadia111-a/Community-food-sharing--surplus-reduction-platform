@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import FoodDetailsCard from "./FoodDetailsCard";
+import { Helmet } from "react-helmet-async";
 
 const FoodDetails = () => {
   const [food, setFood] = useState({});
@@ -17,6 +18,9 @@ const FoodDetails = () => {
   // console.log(brand);
   return (
     <div>
+      <Helmet>
+        <title>Fresh Food | Food Details</title>
+      </Helmet>
       <FoodDetailsCard food={food}></FoodDetailsCard>
     </div>
   );

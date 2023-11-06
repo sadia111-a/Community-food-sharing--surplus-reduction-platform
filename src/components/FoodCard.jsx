@@ -17,7 +17,7 @@ const FoodCard = ({ food }) => {
       <figure className="px-5 pt-10">
         <img
           src={food_img}
-          alt="Shoes"
+          alt="food"
           className="rounded-xl h-[300px] w-full"
         />
       </figure>
