@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const FoodCard = ({ food }) => {
   const {
+    _id,
     food_img,
     food_name,
     donator_img,
@@ -30,9 +33,11 @@ const FoodCard = ({ food }) => {
             Donator: {donator_name}
           </span>
         </div>
-        <button className="btn btn-primary border-none font-semibold hover:bg-green-500 text-orange-950 bg-amber-100">
-          View Details
-        </button>
+        <Link to={`/details/${_id}`}>
+          <button className="btn btn-block border-none font-semibold hover:bg-green-500 text-orange-950 bg-amber-100">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );
