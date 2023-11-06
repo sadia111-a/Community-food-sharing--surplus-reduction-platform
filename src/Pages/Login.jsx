@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../provider/AuthProvider";
 import SocialLogin from "../components/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -39,6 +40,9 @@ const Login = () => {
           "url(https://i.ibb.co/G5nVM1d/pexels-photo-5775061.webp)",
       }}
     >
+      <Helmet>
+        <title>Fresh Food | Login</title>
+      </Helmet>
       <div className="hero-content flex-col  ">
         <div className="text-center "></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -2,19 +2,19 @@ const CustomerReview = () => {
   return (
     <div className="mt-8 space-y-4">
       <div>
-        <p className="text-2xl font-bold text-green-500 text-center">
+        <p className="text-xl lg:text-2xl font-bold text-green-500 text-center">
           Testimonial
         </p>
-        <h2 className="text-5xl text-orange-950 text-center font-bold">
+        <h2 className="text-xl lg:text-5xl text-orange-950 text-center font-bold">
           What Customer Says
         </h2>
-        <p className="w-2/4 mx-auto text-center">
+        <p className="lg:w-2/4 text-sm  mx-auto text-center mt-4">
           the majority have suffered alteration in some form, by injected
           humour, or randomised words which don't look even slightly believable.
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div className="relative ml-6 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+        <div className="relative lg:ml-6 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
           <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"

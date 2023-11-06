@@ -6,7 +6,7 @@
     "donator_name": "Alice Johnson",
     "food_quantity": "3 servings",
     "location": "123 Elm Street, Anytown",
-    "expired_date": "2023-12-15",
+    "expired_date": "15-12-2023",
     "quality": "Excellent"
   },
   {
@@ -16,7 +16,7 @@
     "donator_name": "Emily Davis",
     "food_quantity": "4 portions",
     "location": "456 Oak Avenue, Another City",
-    "expired_date": "2023-11-30",
+    "expired_date": "30-11-2023",
     "quality": "Good"
   },
   {
@@ -26,7 +26,7 @@
     "donator_name": "John Smith",
     "food_quantity": "2 quarts",
     "location": "789 Maple Road, Townsville",
-    "expired_date": "2023-12-05",
+    "expired_date": "05-12-2023",
     "quality": "Excellent"
   },
   {
@@ -36,7 +36,7 @@
     "donator_name": "Maria Brown",
     "food_quantity": "1 large pizza",
     "location": "101 Pine Lane, Smallville",
-    "expired_date": "2023-11-25",
+    "expired_date": "25-11-2023",
     "quality": "Very Good"
   },
   {
@@ -46,7 +46,7 @@
     "donator_name": "Sarah Wilson",
     "food_quantity": "5 servings",
     "location": "234 Cedar Street, Another Town",
-    "expired_date": "2023-12-10",
+    "expired_date": "10-12-2023",
     "quality": "Good"
   },
   {
@@ -56,7 +56,7 @@
     "donator_name": "David Lee",
     "food_quantity": "6 burritos",
     "location": "567 Birch Drive, Hometown",
-    "expired_date": "2023-11-28",
+    "expired_date": "28-11-2023",
     "quality": "Excellent"
   },
   {
@@ -66,7 +66,7 @@
     "donator_name": "Olivia White",
     "food_quantity": "1 whole cake",
     "location": "321 Redwood Lane, Villageville",
-    "expired_date": "2023-12-20",
+    "expired_date": "20-12-2023",
     "quality": "Very Good"
   },
   {
@@ -76,7 +76,7 @@
     "donator_name": "Ethan Clark",
     "food_quantity": "20 pieces",
     "location": "432 Oak Road, Riverside",
-    "expired_date": "2023-11-29",
+    "expired_date": "29-11-2023",
     "quality": "Good"
   },
   {
@@ -86,7 +86,7 @@
     "donator_name": "Sophia Anderson",
     "food_quantity": "4 servings",
     "location": "654 Elm Lane, Lakeview",
-    "expired_date": "2023-12-12",
+    "expired_date": "12-12-2023",
     "quality": "Excellent"
   },
   {
@@ -96,7 +96,7 @@
     "donator_name": "Daniel Garcia",
     "food_quantity": "2 sandwiches",
     "location": "789 Cedar Street, Riverside",
-    "expired_date": "2023-11-29",
+    "expired_date": "29-11-2023",
     "quality": "Very Good"
   },
   {
@@ -106,7 +106,7 @@
     "donator_name": "Isabella Martinez",
     "food_quantity": "4 servings",
     "location": "123 Pine Road, Smalltown",
-    "expired_date": "2023-12-10",
+    "expired_date": "10-12-2023",
     "quality": "Good"
   },
   {
@@ -116,7 +116,7 @@
     "donator_name": "William Turner",
     "food_quantity": "12 bars",
     "location": "567 Elm Drive, Countryside",
-    "expired_date": "2023-11-30",
+    "expired_date": "30-11-2023",
     "quality": "Excellent"
   }
 ]

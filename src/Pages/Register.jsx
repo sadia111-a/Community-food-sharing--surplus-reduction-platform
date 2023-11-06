@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../provider/AuthProvider";
 import SocialLogin from "../components/SocialLogin";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useContext(AuthContext);
@@ -54,6 +55,9 @@ const Register = () => {
           "url(https://i.ibb.co/NVR9SzD/pexels-photo-5638732.jpg)",
       }}
     >
+      <Helmet>
+        <title>Fresh Food | Register</title>
+      </Helmet>
       <div className="hero-content flex-col ">
         <div className="text-center "></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
