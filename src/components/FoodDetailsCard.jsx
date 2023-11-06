@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import PropTypes from "prop-types";
+import ModalForm from "./ModalForm";
 
 const FoodDetailsCard = ({ food }) => {
   const {
-    _id,
     food_img,
     food_name,
     donator_img,
@@ -112,13 +112,19 @@ const FoodDetailsCard = ({ food }) => {
             <span className="text-xl lg:text-3xl font-bold text-gray-900 dark:text-white">
               Expired Date: {expired_date}
             </span>
-            <Link
-              to="/myFoodRequest"
-              href="#"
-              className="text-orange-950 bg-lime-400 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Request
-            </Link>
+
+            <div className="">
+              {/* Open the modal using document.getElementById('ID').showModal() method */}
+              <button
+                className="btn text-orange-950 bg-lime-400 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() =>
+                  document.getElementById("my_modal_5").showModal()
+                }
+              >
+                Request
+                <ModalForm></ModalForm>
+              </button>
+            </div>
           </div>
         </div>
       </div>

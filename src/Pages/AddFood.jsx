@@ -16,7 +16,7 @@ const AddFood = () => {
     const location = form.location.value;
     const expired_date = form.expired_date.value;
     const quality = form.quality.value;
-    const foodStatus = form.foodStatus.value;
+
     const email = user?.email;
     const newFood = {
       food_img,
@@ -53,7 +53,7 @@ const AddFood = () => {
   return (
     <div className="bg-amber-50 p-24">
       <Helmet>
-        <title>Fresh Food|| Add Food</title>
+        <title>Fresh Food | Add Food</title>
       </Helmet>
       <h2 className="text-3xl text-center font-extrabold text-orange-950 mb-8">
         Add Food
@@ -157,7 +157,7 @@ const AddFood = () => {
             <label className="input-group">
               <input
                 type="text"
-                defaultValue={user?.photoURL}
+                value={user?.photoURL}
                 placeholder="donator image"
                 name="donator_img"
                 className="w-full input input-bordered"
@@ -171,7 +171,7 @@ const AddFood = () => {
             <label className="input-group">
               <input
                 type="text"
-                defaultValue={user?.displayName}
+                value={user?.displayName}
                 name="donator_name"
                 placeholder="donator name"
                 className="w-full input input-bordered"
@@ -188,7 +188,7 @@ const AddFood = () => {
             <label className="input-group">
               <input
                 type="email"
-                defaultValue={user?.email}
+                value={user?.email}
                 placeholder="donator email"
                 name="email"
                 className="w-full input input-bordered"
@@ -203,7 +203,7 @@ const AddFood = () => {
               <input
                 type="text"
                 name="foodStatus"
-                // defaultValue={foodStatus}
+                value="Available"
                 placeholder="Available"
                 className="w-full input input-bordered"
               />
