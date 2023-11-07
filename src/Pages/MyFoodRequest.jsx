@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../provider/AuthProvider";
 import RequestRow from "./RequestRow";
+import Swal from "sweetalert2";
 
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext);
@@ -13,21 +14,36 @@ const MyFoodRequest = () => {
       .then((data) => setRequests(data));
   }, []);
   const handleDelete = (id) => {
-    const proceed = confirm("Are you sure you want to delete");
-    if (proceed) {
-      fetch(`http://localhost:5000/requests/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("Deleted successful");
-            const remaining = requests.filter((request) => request._id !== id);
-            setRequests(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/requests/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your request has been deleted.",
+                "success"
+              );
+              const remaining = requests.filter(
+                (request) => request._id !== id
+              );
+              setRequests(remaining);
+            }
+          });
+      }
+    });
   };
   return (
     <div>
