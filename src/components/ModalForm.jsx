@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
 
 const ModalForm = ({ food }) => {
   const [currentDate, setCurrentDate] = useState(
@@ -13,11 +15,11 @@ const ModalForm = ({ food }) => {
     _id,
     food_img,
     food_name,
-    donator_img,
+
     donator_name,
-    food_quantity,
+
     location,
-    expired_date,
+
     quality,
   } = food || {};
   const { user } = useContext(AuthContext);
@@ -30,7 +32,7 @@ const ModalForm = ({ food }) => {
     const email = user?.email;
     const food_img = form.food_img.value;
     const food_name = form.food_name.value;
-    const donator_img = form.donator_img.value;
+    // const donator_img = form.donator_img.value;
     const donator_name = form.donator_name.value;
     // const food_quantity = form.food_quantity.value;
     const location = form.location.value;
@@ -40,18 +42,18 @@ const ModalForm = ({ food }) => {
     const foodRequest = {
       food_img,
       email,
-      food_name,
-      donator_img,
-      donator_name,
-      location,
-      quality,
+      foodName: food_name,
+
+      donatorName: donator_name,
+      location: location,
+      quality: quality,
       date,
       donation_money: money,
 
       food_id: _id,
     };
     console.log(foodRequest);
-    fetch("", {
+    fetch("http://localhost:5000/requests", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -62,7 +64,12 @@ const ModalForm = ({ food }) => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("Food requested successfully");
+          Swal.fire({
+            title: "Success!",
+            text: "Food requested successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
       });
   };
@@ -202,9 +209,9 @@ const ModalForm = ({ food }) => {
                   </label>
                   <input
                     type="text"
-                    name="donation"
-                    placeholder="donation money"
-                    defaultValue="donation money"
+                    name="money"
+                    placeholder="money"
+                    // defaultValue="money"
                     className="input input-bordered"
                     required
                   />
