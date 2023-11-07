@@ -122,7 +122,7 @@ const FoodDetailsCard = ({ food }) => {
                 }
               >
                 Request
-                <ModalForm></ModalForm>
+                <ModalForm food={food}></ModalForm>
               </button>
             </div>
           </div>

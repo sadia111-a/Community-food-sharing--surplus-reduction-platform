@@ -1,16 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useParams } from "react-router-dom";
 
-const ModalForm = () => {
-  const [food, setFood] = useState([]);
-  console.log(food);
+const ModalForm = ({ food }) => {
+  const [currentDate, setCurrentDate] = useState(
+    new Date().toLocaleDateString("en-GB")
+  );
+  const handleDateChange = (event) => {
+    setCurrentDate(event.target.value);
+  };
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/foods`)
-      .then((res) => res.json())
-      .then((data) => setFood(data[(0, 1, 2)]));
-  }, []);
   const {
     _id,
     food_img,
@@ -27,26 +25,30 @@ const ModalForm = () => {
   const handleRequestFood = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+
     const date = form.date.value;
     const email = user?.email;
     const food_img = form.food_img.value;
     const food_name = form.food_name.value;
     const donator_img = form.donator_img.value;
     const donator_name = form.donator_name.value;
-    const food_quantity = form.food_quantity.value;
+    // const food_quantity = form.food_quantity.value;
     const location = form.location.value;
-    const expired_date = form.expired_date.value;
+    // const expired_date = form.expired_date.value;
     const quality = form.quality.value;
+    const money = form.money.value;
     const foodRequest = {
-      customerName: name,
+      food_img,
       email,
       food_name,
+      donator_img,
+      donator_name,
+      location,
+      quality,
       date,
-      img,
-      service: title,
-      service_id: _id,
-      price: price,
+      donation_money: money,
+
+      food_id: _id,
     };
     console.log(foodRequest);
     fetch("", {
@@ -93,8 +95,11 @@ const ModalForm = () => {
                     <span className="label-text">Date</span>
                   </label>
                   <input
-                    type="date"
+                    type="text"
+                    id="dateInput"
                     name="date"
+                    value={currentDate}
+                    onChange={handleDateChange}
                     className="input input-bordered"
                     required
                   />
@@ -120,7 +125,7 @@ const ModalForm = () => {
                     type="text"
                     name="food_name"
                     placeholder="food name"
-                    defaultValue={food_name}
+                    value={food_name}
                     className="input input-bordered"
                     required
                   />
@@ -133,7 +138,7 @@ const ModalForm = () => {
                     type="text"
                     name="food_img"
                     placeholder="food image"
-                    defaultValue={food_img}
+                    value={food_img}
                     className="input input-bordered"
                     required
                   />
@@ -146,37 +151,25 @@ const ModalForm = () => {
                     type="text"
                     name="_id"
                     placeholder="food id"
-                    defaultValue={_id}
+                    value={_id}
                     className="input input-bordered"
                     required
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Food Donator</span>
+                    <span className="label-text">Food Donator Name</span>
                   </label>
                   <input
                     type="text"
                     name="donator_name"
                     placeholder="food donator name"
-                    defaultValue={donator_name}
+                    value={donator_name}
                     className="input input-bordered"
                     required
                   />
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Request Date</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="request_date"
-                    placeholder="date name"
-                    defaultValue="date"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Pickup Location</span>
@@ -185,7 +178,7 @@ const ModalForm = () => {
                     type="text"
                     name="location"
                     placeholder="pickup location"
-                    defaultValue={location}
+                    value={location}
                     className="input input-bordered"
                     required
                   />
@@ -211,7 +204,7 @@ const ModalForm = () => {
                     type="text"
                     name="donation"
                     placeholder="donation money"
-                    defaultValue="money"
+                    defaultValue="donation money"
                     className="input input-bordered"
                     required
                   />
