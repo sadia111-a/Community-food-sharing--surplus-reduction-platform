@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/update/:id",
+        path: "/update/:_id",
         element: <UpdateFood></UpdateFood>,
         loader: () => fetch(`http://localhost:5000/foods`),
       },

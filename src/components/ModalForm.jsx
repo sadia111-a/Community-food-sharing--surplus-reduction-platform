@@ -32,11 +32,8 @@ const ModalForm = ({ food }) => {
     const email = user?.email;
     const food_img = form.food_img.value;
     const food_name = form.food_name.value;
-    // const donator_img = form.donator_img.value;
     const donator_name = form.donator_name.value;
-    // const food_quantity = form.food_quantity.value;
     const location = form.location.value;
-    // const expired_date = form.expired_date.value;
     const quality = form.quality.value;
     const money = form.money.value;
     const foodRequest = {
