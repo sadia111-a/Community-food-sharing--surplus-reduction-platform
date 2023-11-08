@@ -1,4 +1,4 @@
-const ManageSingleCard = ({ request, handleDelete }) => {
+const ManageSingleCard = ({ request, handleDelete, handleDelivered }) => {
   const {
     _id,
     food_img,
@@ -6,6 +6,7 @@ const ManageSingleCard = ({ request, handleDelete }) => {
     foodName,
     location,
     date,
+    status,
     donation_money,
     donatorName,
     // donator_img,
@@ -47,7 +48,16 @@ const ManageSingleCard = ({ request, handleDelete }) => {
       <td>{date}</td>
       <td>${donation_money}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">Available</button>
+        {status === "delivered" ? (
+          <span className="font-bold text-primary">Delivered</span>
+        ) : (
+          <button
+            onClick={() => handleDelivered(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Available
+          </button>
+        )}
       </th>
     </tr>
   );

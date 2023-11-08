@@ -12,7 +12,7 @@ const ManageSingleFood = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setRequests(data));
-  }, []);
+  }, [url]);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +45,28 @@ const ManageSingleFood = () => {
       }
     });
   };
+
+  const handleDelivered = (id) => {
+    fetch(`http://localhost:5000/requests/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "delivered" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // update status
+          const remaining = requests.filter((request) => request._id !== id);
+          const updated = requests.find((request) => request._id == id);
+          updated.status = "delivered";
+          const newRequests = [updated, ...remaining];
+          setRequests(newRequests);
+        }
+      });
+  };
   return (
     <div>
       <Helmet>
@@ -75,6 +97,7 @@ const ManageSingleFood = () => {
                   key={request._id}
                   request={request}
                   handleDelete={handleDelete}
+                  handleDelivered={handleDelivered}
                 ></ManageSingleCard>
               ))}
             </tbody>
