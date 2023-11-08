@@ -80,7 +80,7 @@ const ManageMyFood = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/foods/${_id}`, {
+        fetch(`https://food-sharing-server-green.vercel.app/foods/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

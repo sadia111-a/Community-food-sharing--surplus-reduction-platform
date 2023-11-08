@@ -42,7 +42,8 @@ const router = createBrowserRouter([
             <ManageMyFood></ManageMyFood>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/foods"),
+        loader: () =>
+          fetch("https://food-sharing-server-green.vercel.app/foods"),
       },
       {
         path: "/myFoodRequest",
@@ -63,17 +64,20 @@ const router = createBrowserRouter([
       {
         path: "/update/:_id",
         element: <UpdateFood></UpdateFood>,
-        loader: () => fetch(`http://localhost:5000/foods`),
+        loader: () =>
+          fetch(`https://food-sharing-server-green.vercel.app/foods`),
       },
       {
         path: "/manage/:_id",
         element: <ManageSingleFood></ManageSingleFood>,
-        loader: () => fetch(`http://localhost:5000/foods`),
+        loader: () =>
+          fetch(`https://food-sharing-server-green.vercel.app/foods`),
       },
       {
         path: "/details/:_id",
         element: <FoodDetails></FoodDetails>,
-        loader: () => fetch(`http://localhost:5000/foods`),
+        loader: () =>
+          fetch(`https://food-sharing-server-green.vercel.app/foods`),
       },
     ],
   },

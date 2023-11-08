@@ -50,7 +50,7 @@ const ModalForm = ({ food }) => {
       food_id: _id,
     };
     console.log(foodRequest);
-    fetch("http://localhost:5000/requests", {
+    fetch("https://food-sharing-server-green.vercel.app/requests", {
       method: "POST",
       headers: {
         "content-type": "application/json",

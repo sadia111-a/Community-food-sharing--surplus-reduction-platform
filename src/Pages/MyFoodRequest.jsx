@@ -7,9 +7,9 @@ import Swal from "sweetalert2";
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext);
   const [requests, setRequests] = useState([]);
-  const url = `http://localhost:5000/requests?email=${user?.email}`;
+  const url = `https://food-sharing-server-green.vercel.app/requests?email=${user?.email}`;
   useEffect(() => {
-    fetch(url)
+    fetch(url, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setRequests(data));
   }, []);
@@ -24,7 +24,7 @@ const MyFoodRequest = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/requests/${id}`, {
+        fetch(`https://food-sharing-server-green.vercel.app/requests/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

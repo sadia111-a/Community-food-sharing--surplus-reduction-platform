@@ -7,7 +7,7 @@ import ManageSingleCard from "./ManageSingleCard";
 const ManageSingleFood = () => {
   const { user } = useContext(AuthContext);
   const [requests, setRequests] = useState([]);
-  const url = `http://localhost:5000/requests?email=${user?.email}`;
+  const url = `https://food-sharing-server-green.vercel.app/requests?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -24,7 +24,7 @@ const ManageSingleFood = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/requests/${id}`, {
+        fetch(`https://food-sharing-server-green.vercel.app/requests/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -47,7 +47,7 @@ const ManageSingleFood = () => {
   };
 
   const handleDelivered = (id) => {
-    fetch(`http://localhost:5000/requests/${id}`, {
+    fetch(`https://food-sharing-server-green.vercel.app/requests/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

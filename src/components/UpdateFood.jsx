@@ -52,7 +52,7 @@ const UpdateFood = () => {
     };
     console.log(updatedFood);
     // send data to the server
-    fetch(`http://localhost:5000/foods/${_id}`, {
+    fetch(`https://food-sharing-server-green.vercel.app/foods/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

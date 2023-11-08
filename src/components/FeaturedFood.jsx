@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const FeaturedFood = () => {
   const [top6Foods, setTop6Foods] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
+    fetch("https://food-sharing-server-green.vercel.app/foods")
       .then((res) => res.json())
       .then((data) => {
         // Sort the data by food quantity in descending order
