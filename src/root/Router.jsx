@@ -11,6 +11,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import FoodDetails from "../components/FoodDetails";
 import UpdateFood from "../components/UpdateFood";
+import ManageSingleFood from "../components/ManageSingleFood";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
       {
         path: "/update/:_id",
         element: <UpdateFood></UpdateFood>,
+        loader: () => fetch(`http://localhost:5000/foods`),
+      },
+      {
+        path: "/manage/:_id",
+        element: <ManageSingleFood></ManageSingleFood>,
         loader: () => fetch(`http://localhost:5000/foods`),
       },
       {

@@ -1,10 +1,13 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useTable } from "react-table";
 import * as React from "react";
+import Swal from "sweetalert2";
 
 const ManageMyFood = () => {
   const foods = useLoaderData();
+  const [food, setFoods] = React.useState();
   console.log(foods);
+
   // Your food data
   const data = React.useMemo(() => foods, [foods]);
 
@@ -42,6 +45,9 @@ const ManageMyFood = () => {
             <button className="btn">
               <Link to={`/update/${row.original._id}`}>Edit</Link>
             </button>
+            <button className="btn">
+              <Link to={`/manage/${row.original._id}`}>Manage</Link>
+            </button>
             <button
               className="btn"
               onClick={() => handleDelete(row.original.id)}
@@ -59,18 +65,39 @@ const ManageMyFood = () => {
     useTable({ columns, data });
 
   const handleEdit = (food) => {
-    // Implement your edit logic here
-    // You can navigate to the edit page or show a modal, etc.
     console.log("Edit Food:", food);
   };
 
-  const handleDelete = (food) => {
-    // Implement your delete logic here
-    // You can show a confirmation modal and delete the food item, etc.
-    console.log("Delete Food:", food);
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/foods/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your food has been deleted.", "success");
+              const remaining = food.filter((pod) => pod._id !== _id);
+              setFoods(remaining);
+            }
+          });
+      }
+    });
   };
+
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 overflow-x-auto">
       <div className="">
         <table {...getTableProps()} className="w-full border border-collapse">
           <thead>
