@@ -69,7 +69,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/manage/:_id",
-        element: <ManageSingleFood></ManageSingleFood>,
+        element: (
+          <PrivateRoute>
+            <ManageSingleFood></ManageSingleFood>
+          </PrivateRoute>
+        ),
         loader: () =>
           fetch(`https://food-sharing-server-green.vercel.app/foods`),
       },
