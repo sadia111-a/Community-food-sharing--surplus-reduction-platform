@@ -1,3 +1,15 @@
+### 🍴Community-food-sharing--surplus-reduction-platform
+
+- **Description:** Project focuses on building a Community Food Sharing Platform, and it aim to connect those
+  with surplus food to those in need, reducing food waste and addressing
+  hunger.
+
+- **Technologies Used:**
+  - Frontend: JavaScript, React.js, Tailwind CSS
+  - Backend: Node.js, Express.js
+  - Database: MongoDB
+  - Authentication: Firebase Authentication with JWT set at cookies
+
 # Live link of my project
 
 - https://food-sharing-b0af8.web.app/
